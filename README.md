@@ -1,14 +1,24 @@
-# docker-compose init
+# README
 
-docker-compose を用いて `rails new` したい時の最初の構成
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## 使い方
+Things you may want to cover:
 
-```sh
-cp path/to/{Dockerfile,Gemfile,docker-compose.yml} .
-# `myapp` を置換
-docker-compose build
-docker-compose run web bundle
-docker-compose run web bundle exec rails new . -B --database=postgresql --force
-cp path/to/Gemfile.rails_init .
-```
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
