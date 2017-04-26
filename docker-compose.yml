@@ -17,6 +17,7 @@ web:
     - DB_USERNAME=postgres
     - DB_PASSWORD=
     - DB_HOST=db
+    - OAUTH_URL=https://740ed3dd.ngrok.io
 bundle:
   image: oauthclient_web
   volumes:
