@@ -5,23 +5,20 @@ default: &default
 
 development:
   <<: *default
-  database: myapp_development
+  database: oauth_client_development
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   host: <%= ENV['DB_HOST'] %>
 
 test:
   <<: *default
-  database: myapp_test
+  database: oauth_client_test
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   host: <%= ENV['DB_HOST'] %>
 
-production: &production
-  <<: *default
-  database: <%= ENV['RDS_DB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
-
+production:
+  database: oauth_client_production
+  adapter: postgresql
+  host: localhost
+  password:
