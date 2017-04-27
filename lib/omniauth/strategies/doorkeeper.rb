@@ -13,6 +13,8 @@ module OmniAuth
 
       # providerのAPIを叩いて、データを取ってくる
       def raw_info
+        binding.pry
+
         @raw_info ||= access_token.get('/oauth/credentials/login.json').parsed
       end
     end

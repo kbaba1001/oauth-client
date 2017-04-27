@@ -15,6 +15,11 @@
     <p class="alert"><%= alert %></p>
     <%= link_to 'オレオレアカウントでログイン', user_doorkeeper_omniauth_authorize_path %>
 
+    <% if user_signed_in? %>
+      サインイン中
+      <%= current_user %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
