@@ -1,11 +1,13 @@
 module OmniAuth
   module Strategies
     class Doorkeeper < OmniAuth::Strategies::OAuth2
-      option :name, :doorkeeper # strategyの名前　ここで指定した名前をdeviseで呼び出す
+      option :name, :doorkeeper
       option :client_options, site: ENV['OAUTH_URL'], authorize_path: '/oauth/authorize'
+      option :provider_ignores_state, true
 
       # uidとして設定するデータを指定
       uid { raw_info['user']['id'] }
+
       # providerから送られてきたデータの内、どれを使いたいか
       info do
         { email: raw_info['user']['email'] }
@@ -13,8 +15,6 @@ module OmniAuth
 
       # providerのAPIを叩いて、データを取ってくる
       def raw_info
-        binding.pry
-
         @raw_info ||= access_token.get('/oauth/credentials/login.json').parsed
       end
     end

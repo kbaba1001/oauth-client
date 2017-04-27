@@ -17,9 +17,9 @@ web:
     - DB_USERNAME=postgres
     - DB_PASSWORD=
     - DB_HOST=db
-    - OAUTH_URL=https://3cf4768a.ngrok.io
-    - OAUTH_ID=b557c2d5367da43cb396192b778b9579ae582cba7d3d779a62e4f44751c7dded
-    - OAUTH_SECRET=d6651176c393cb3a5f33a3dfbb84205f68579adce29e6f65f4b108c0b7b62eea
+    - OAUTH_URL=https://0529a6fe.ngrok.io
+    - OAUTH_ID=ec5aa78511c60d39ff58ecab79516cb7098d7b04232715c04b915a04ba440543
+    - OAUTH_SECRET=62a54ac8cf7cf0d8a3c15d3131157ee6da453da88ba87ffdbc216701e37221f0
 bundle:
   image: oauthclient_web
   volumes:
