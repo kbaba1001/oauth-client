@@ -5,6 +5,10 @@ module OmniAuth
       option :client_options, site: ENV['OAUTH_URL'] #, authorize_path: '/oauth/authorize', token_url: '/oauth/token'
       option :provider_ignores_state, true
 
+      # NOTE lib/omniauth/strategy.rb のメソッドをオーバーライド。
+      # doorkeeper の authorization_code を使うとき、query_string が含まれていると、
+      # https://github.com/doorkeeper-gem/doorkeeper/blob/v4.2.5/lib/doorkeeper/oauth/authorization_code_request.rb#L47
+      # の部分で redirect_url の比較に失敗するため、query_string を取り除く
       def callback_url
         full_host + script_name + callback_path # + query_string
       end
