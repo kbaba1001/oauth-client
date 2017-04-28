@@ -1,24 +1,16 @@
-# README
+# OAuth Client
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## セットアップ
 
-Things you may want to cover:
+docker-compose.yml 中の `OAUTH_URL`, `OAUTH_ID`, `OAUTH_SECRET` を次のように書き換える。
 
-* Ruby version
+- `OAUTH_URL` ... OAuth2 でアクセスするサーバーのURL
+- `OAUTH_ID` ... 上記のサーバーに登録してある OAuth アプリの ID
+- `OAUTH_SECRET` ... 上記のシークレットキー
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+docker-compose build
+docker-compose run web bundle
+docker-compose run web bundle exec rails db:setup
+docker-compose up # 4000ポートでrails serverが起動
+```
