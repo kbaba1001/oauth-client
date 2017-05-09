@@ -2,7 +2,7 @@ module OmniAuth
   module Strategies
     class Doorkeeper < OmniAuth::Strategies::OAuth2
       option :name, :doorkeeper
-      option :client_options, site: ENV['OAUTH_URL'], authorize_url: '/manage/oauth/authorize', token_url: '/manage/oauth/token'
+      option :client_options, site: ENV['OAUTH_URL'], authorize_url: '/oauth/authorize', token_url: '/oauth/token'
 
       # NOTE lib/omniauth/strategy.rb のメソッドをオーバーライド。
       # doorkeeper の authorization_code を使うとき、query_string が含まれていると、
