@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     return user unless user.nil?
 
     self.create(
-      email: auth.info.email,
+      email: "user-#{SecureRandom.hex}@example.com",
       provider: auth.provider,
       uid: auth.uid,
       password_digest: Monban.hash_token('password')

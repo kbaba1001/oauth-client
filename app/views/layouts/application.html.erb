@@ -10,8 +10,11 @@
 
   <body>
     <% if signed_in? %>
-      サインイン中
-      <%= current_user %>
+      サインインユーザー
+      <br>
+      ID: <%= current_user.id %>
+      <br>
+      Email:<%= current_user.email %>
     <% end %>
 
     <%= yield %>
